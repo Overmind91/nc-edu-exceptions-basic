@@ -11,7 +11,7 @@ import java.util.SplittableRandom;
  */
 public class LogTest {
 
-    // использует Log4j и slf4j библиотеки
+    // using Log4j and slf4j libraries
     private static Logger logger = LoggerFactory.getLogger(LogTest.class);
 
     public static void run() {
@@ -26,10 +26,10 @@ public class LogTest {
         try {
             if (true) throw new RuntimeException("something went wrong!");
         } catch (Exception e) {
-            logger.error("e.getMessage(): "+e.getMessage()); // вывод только сообщения из исключения
-            logger.error("e.getStackTrace(): "+e.getStackTrace().toString()); // пытаемся вывести стейктрейс
-            e.printStackTrace(); // пишем в консоль, но это плохо, так обычно лучше не делать
-            logger.error("ExceptionUtils.getStackTrace(e): "+ExceptionUtils.getStackTrace(e)); // стектрейс здорового человека
+            logger.error("e.getMessage(): "+e.getMessage()); // write exception message only
+            logger.error("e.getStackTrace(): "+e.getStackTrace().toString()); // trying to write stacktrace
+            //e.printStackTrace(); // todo uncomment and test - write to console, but this is bad practice
+            logger.error("ExceptionUtils.getStackTrace(e): "+ExceptionUtils.getStackTrace(e)); // stack trace of healthy man
         }
 
         System.out.println("\n*** Log tests End! ***");

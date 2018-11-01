@@ -13,12 +13,12 @@ public class DebugTest {
         SplittableRandom random = new SplittableRandom();
         int result = 0;
 
-        result = doSomeLogic(result, random.nextInt(1, 10));
-        result = doSomeLogic(result, random.nextInt(1, 10));
+        result = doSomeMagic(result, random.nextInt(1, 10));
+        result = doSomeMagic(result, random.nextInt(1, 10));
         System.out.println("final result: "+result);
     }
 
-    private static int doSomeLogic(int result, int x) {
+    private static int doSomeMagic(int result, int x) {
         if (x == 1) {
             result += x;
         } else if (x == 2) {

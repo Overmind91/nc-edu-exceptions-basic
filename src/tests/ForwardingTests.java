@@ -15,8 +15,8 @@ public class ForwardingTests {
 
         try { // todo try to comment
             doSomething();
-        } catch (UnsupportedOperationException e) {
-            logger.error(e.getMessage());
+        } catch (UnsupportedOperationException e) { // and this
+            logger.error(e.getMessage()); // and this
         }
 
         try {

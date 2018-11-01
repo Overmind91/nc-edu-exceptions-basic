@@ -1,7 +1,5 @@
 package tests;
 
-import java.util.*;
-
 /**
  * Created by Overmind on 25.10.2018.
  */
@@ -19,11 +17,11 @@ public class FinalBlockTests {
     }
 
     private static int stringSize(String s) {
-        try { // внутри блока код с возможностью ловить исключения
-            return s.length(); // если s == null, то java бросит исключение
-        } catch (Exception ex) { // ловим исключение любого типа
+        try { // all Exceptions in the block will be caught
+            return s.length(); // if s == null, java will raise nullpointer exception
+        } catch (Exception ex) { // any exception caught in this block
             return -1;
-        } finally { // этот блок выполняется в любом случае в конце
+        } finally { // this code executed anyway always
             return 0;
         }
     }
@@ -31,8 +29,8 @@ public class FinalBlockTests {
     private static void exitTest() {
         try {
             System.out.println("Start");
-            if (true) throw new RuntimeException(); // todo закомментировать и проверить
-            System.exit(0); // эта строка мгновенно завершает выполнение программы
+            if (true) throw new RuntimeException(); // todo пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+            System.exit(0); // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         } catch (Exception e) {
             System.out.println("Exception");
         } finally {
@@ -40,11 +38,4 @@ public class FinalBlockTests {
         }
     }
 
-//    private static void finalWithoutCatch() {
-//        try {
-//            doSmth();
-//        } finally {
-//
-//        }
-//    }
 }
